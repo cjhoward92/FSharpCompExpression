@@ -15,4 +15,10 @@ module Program =
             let! x = maybeAdd m 10
             return x
         } |> printfn "Value is %A"
+
+        maybe {
+            let! m = Nothing
+            let! n = maybeAdd m 10
+            return n
+        } |> printfn "Value is %A"
         0 // return an integer exit code
